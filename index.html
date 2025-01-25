@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>FarmConnect</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/30b83ee514.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div id="header">
+        <div class="container portion">
+
+            <nav>
+                <h1 class="site_name">FarmConnect</h1>
+
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="login.html">Cunsumer Login</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="Register.html">Cunsumer Register</a></li>
+                    <li><a href="FarmerReg.html">Farmer Register</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+
+            <div class="header-text">
+                <h1><span>FarmConnect</span>: Bridging Farmers & Customers</h1>
+                <p>Empowering farmers by connecting them directly to customers. Buy fresh, locally-grown produce and
+                    support your community!</p>
+                <a href="products.html" class="btn">Explore Products</a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!------------Products Section------------>
+    <div id="Portfolio">
+
+        <div class="container">
+
+            <h1 class="sub-title">Our Products</h1>
+            <div class="work-list">
+
+                <div class="work">
+                    <img src="images/fruits.jpeg" alt="Fruits">
+                    <div class="layer">
+                        <p>Fresh seasonal fruits sourced directly from local farms.</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/veg.webp" alt="Vegetables">
+                    <div class="layer">
+                        <p>Organic vegetables picked fresh daily to ensure quality and taste.</p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/grains.png" alt="Grains">
+                    <div class="layer">
+                        <p>Whole grains and pulses cultivated with care by our farmers.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!----------Contact Section----------->
+    <div id="contact">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Us</h1>
+                    <p><i class="fa-solid fa-envelope"></i> support@farmconnect.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+                </div>
+
+                <div class="contact-right">
+
+                    <form>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 FarmConnect. All rights reserved.</p>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmer Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    header {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .dashboard-menu {
+      display: flex;
+      justify-content: space-around;
+      background-color: #2d3e50;
+      padding: 10px;
+    }
+
+    .dashboard-menu a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      font-size: 18px;
+    }
+
+    .dashboard-menu a:hover {
+      background-color: #1e2d3b;
+    }
+
+    .product-list,
+    .order-list {
+      background-color: white;
+      border-radius: 8px;
+      margin-top: 20px;
+      padding: 15px;
+    }
+
+    .product-list table,
+    .order-list table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table th,
+    table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .button:hover {
+      background-color: #218838;
+    }
+
+    .button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .add-product {
+      margin-top: 20px;
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Farmer Dashboard</h1>
+  </header>
+
+  <div class="container">
+    <div class="dashboard-menu">
+      <a href="#">Product Listing</a>
+      <a href="#">Orders</a>
+      <a href="#">Sales Statistics</a>
+      <a href="#">Inventory Management</a>
+    </div>
+
+    <div class="product-list">
+      <h2>Your Products</h2>
+      <table id="productTable">
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Products will be loaded dynamically -->
+        </tbody>
+      </table>
+      <div class="add-product">
+        <a href="add_item.html"><button class="button">Add Product</button></a>
+      </div>
+    </div>
+
+    <div class="order-list">
+      <h2>Recent Orders</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Buyer</th>
+            <th>Items</th>
+            <th>Status</th>
+            <th>Confirmation Status</th>
+          </tr>
+        </thead>
+        <tbody id="orderTable">
+          <tr>
+            <td>#12345</td>
+            <td>John Doe</td>
+            <td>Tomatoes (5kg)</td>
+            <td>Processing</td>
+            <td>
+              <button class="button confirm-button" data-order-id="12345">Confirm</button>
+            </td>
+          <tr>
+            <td>#12378</td>
+            <td>Asma P A</td>
+            <td>Bananas (5kg)</td>
+            <td>Processing</td>
+            <td>
+              <button class="button confirm-button" data-order-id="12378">Confirm</button>
+            </td>
+          </tr>
+          <tr>
+            <td>#22345</td>
+            <td>Anjana K Santhosh</td>
+            <td>Grapes (5kg)</td>
+            <td>Processing</td>
+            <td>
+              <button class="button confirm-button" data-order-id="22345">Confirm</button>
+            </td>
+          <tr>
+            <td>#32345</td>
+            <td>Mila Joseph</td>
+            <td>carrot (1kg)</td>
+            <td>Out for Delivery</td>
+            <td>
+              <button class="button confirm-button" data-order-id="32345">Confirm</button>
+            </td>
+          <tr>
+            <td>#12346</td>
+            <td>Jane Smith</td>
+            <td>Apples (3kg)</td>
+            <td>Shipped</td>
+            <td>
+              <button class="button confirm-button" data-order-id="12346">Confirm</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    // Load default products
+    const defaultProducts = [
+      { name: 'Tomatoes', price: '₹50/kg', quantity: '50' },
+      { name: 'Potatoes', price: '₹30/kg', quantity: '70' },
+      { name: 'Cauliflower', price: '₹50/kg', quantity: '40' },
+      { name: 'Onions', price: '₹40/kg', quantity: '60' },
+      { name: 'Carrots', price: '₹60/kg', quantity: '30' },
+      { name: 'Spinach', price: '₹20/bundle', quantity: '100' },
+      { name: 'Apples', price: '₹150/kg', quantity: '20' },
+      { name: 'Bananas', price: '₹50/dozen', quantity: '50' },
+      { name: 'Grapes', price: '₹120/kg', quantity: '25' },
+      { name: 'Oranges', price: '₹80/kg', quantity: '35' },
+      { name: 'Pineapples', price: '₹90/each', quantity: '15' },
+    ];
+
+    const loadProducts = () => {
+      let products = JSON.parse(localStorage.getItem('products')) || defaultProducts;
+      localStorage.setItem('products', JSON.stringify(products)); // Save defaults if not present
+
+      const productTable = document.querySelector('#productTable tbody');
+      productTable.innerHTML = '';
+
+      products.forEach((product, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${product.name}</td>
+          <td>${product.price}</td>
+          <td>${product.quantity}</td>
+          <td><a href="edit.html?id=${index}"><button class="button">Edit</button></a></td>
+        `;
+        productTable.appendChild(row);
+      });
+    };
+
+    // Handle order confirmation
+    document.addEventListener('DOMContentLoaded', () => {
+      loadProducts();
+
+      const orderTable = document.getElementById('orderTable');
+      orderTable.addEventListener('click', (event) => {
+        if (event.target.classList.contains('confirm-button')) {
+          const button = event.target;
+          const orderRow = button.closest('tr');
+
+          // Update confirmation status in the row
+          const statusCell = document.createElement('td');
+          statusCell.textContent = 'Confirmed';
+          orderRow.replaceChild(statusCell, button.parentElement);
+
+          // Disable the button
+          button.disabled = true;
+          button.textContent = 'Confirmed';
+          button.classList.remove('button');
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

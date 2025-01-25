@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Products</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #00838f;
+            margin-top: 20px;
+        }
+
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0 10px;
+            color: #004d40;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .buy-now {
+            background-color: #00838f;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .buy-now:hover {
+            background-color: #004d40;
+        }
+
+        @media (max-width: 768px) {
+            .products-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Explore Our Products</h1>
+    <div class="products-container">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x150" alt="Product 1" class="product-image">
+            <h2 class="product-name">Product 1</h2>
+            <p class="product-description">This is a brief description of Product 1. It offers great value and features.
+            </p>
+            <a href="#" class="buy-now">Buy Now</a>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x150" alt="Product 2" class="product-image">
+            <h2 class="product-name">Product 2</h2>
+            <p class="product-description">Product 2 is a popular choice among customers. Don’t miss out!</p>
+            <a href="#" class="buy-now">Buy Now</a>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x150" alt="Product 3" class="product-image">
+            <h2 class="product-name">Product 3</h2>
+            <p class="product-description">Experience the best quality with Product 3. Limited stock available.</p>
+            <a href="#" class="buy-now">Buy Now</a>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x150" alt="Product 4" class="product-image">
+            <h2 class="product-name">Product 4</h2>
+            <p class="product-description">Get the latest and greatest with Product 4. Order yours today!</p>
+            <a href="#" class="buy-now">Buy Now</a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .order-tracking-container {
+            background-color: #ffffff;
+            width: 90%;
+            max-width: 900px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .tracking-status {
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+        }
+
+        .status {
+            text-align: center;
+            position: relative;
+            flex: 1;
+        }
+
+        .status .circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            margin: 0 auto 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        .status p {
+            font-size: 16px;
+            color: #777;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .status.active .circle {
+            background-color: #4caf50;
+        }
+
+        .status.completed .circle {
+            background-color: #2196f3;
+        }
+
+        .status.pending .circle {
+            background-color: #f44336;
+        }
+
+        .line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            height: 4px;
+            background-color: #ccc;
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+
+        .line.active {
+            background-color: #4caf50;
+        }
+
+        .line.completed {
+            background-color: #2196f3;
+        }
+
+        .line.pending {
+            background-color: #f44336;
+        }
+
+        .details {
+            margin-top: 30px;
+            font-size: 16px;
+            color: #555;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        .details p {
+            margin: 10px 0;
+        }
+
+        .current-state {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 15px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="order-tracking-container">
+        <h1>Track Your Order</h1>
+        
+        <!-- Tracking Status Section -->
+        <div class="tracking-status">
+            <div class="status active">
+                <div class="circle">1</div>
+                <p>Order Placed</p>
+            </div>
+            <div class="line active"></div>
+            <div class="status completed">
+                <div class="circle">2</div>
+                <p>Shipped</p>
+            </div>
+            <div class="line completed"></div>
+            <div class="status pending">
+                <div class="circle">3</div>
+                <p>Out for Delivery</p>
+            </div>
+            <div class="line pending"></div>
+            <div class="status">
+                <div class="circle">4</div>
+                <p>Delivered</p>
+            </div>
+        </div>
+
+        <!-- Current State Notification -->
+        <div class="current-state">
+            Your Current Status: <strong>Out for Delivery</strong>
+        </div>
+
+        <!-- Order Details Section -->
+        <div class="details">
+            <p><strong>Order ID:</strong> #123456</p>
+            <p><strong>Customer Name:</strong> John Doe</p>
+            <p><strong>Shipping Address:</strong> 123 Main Street, Cityville, USA</p>
+            <p><strong>Estimated Delivery Time:</strong> 3-5 Business Days</p>
+        </div>
+    </div>
+</body>
+</html>

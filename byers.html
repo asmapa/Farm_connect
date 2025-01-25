@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriFarmer Dashboard</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f7f6;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(to right, #4CAF50, #66BB6A);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            background-color: #4CAF50;
+            color: white;
+            padding-top: 80px;
+            /* Increased padding to move items down */
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+            z-index: 90;
+        }
+
+        .sidebar a {
+            padding: 15px 20px;
+            text-decoration: none;
+            color: white;
+            display: block;
+            font-size: 1.2em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #66BB6A;
+            padding-left: 25px;
+        }
+
+        /* Sidebar Toggle for Mobile */
+        .sidebar-toggle {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 12px;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Main Content Area */
+        .main-content {
+            margin-left: 250px;
+            padding: 80px 20px 20px;
+            flex-grow: 1;
+            overflow-y: auto;
+            transition: margin-left 0.3s ease;
+        }
+
+        .main-content .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            padding: 20px;
+        }
+
+        /* Card Styles for Products */
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 1.4em;
+            color: #333;
+        }
+
+        .card .price {
+            font-size: 1.2em;
+            color: #4CAF50;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .card button {
+            background: linear-gradient(to right, #4CAF50, #66BB6A);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s ease;
+        }
+
+        .card button:hover {
+            background: #45a049;
+        }
+
+        footer {
+            background: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 1em;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 0;
+                padding: 0;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 10px;
+            }
+
+            .sidebar.active {
+                width: 250px;
+                padding-top: 50px;
+            }
+
+            .sidebar-toggle {
+                display: block;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                justify-items: stretch;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="trackorder.html">Track Order</a>
+        <a href="cart.html" onclick="redirectToCart(event)">View Cart</a>
+        <a href="logout.html">Log Out</a>
+    </div>
+
+    <!-- Sidebar Toggle (Mobile) -->
+    <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>AgriFarmer Dashboard</header>
+
+        <div class="container">
+            <div class="card">
+                <img src="images/tomato.jpg" alt="Tomatoes">
+                <h3>Tomatoes</h3>
+                <span class="price">₹50/kg</span>
+                <button onclick="addToCart('Tomatoes', 50)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/potato (1).jpg" alt="Potatoes">
+                <h3>Potatoes</h3>
+                <span class="price">₹30/kg</span>
+                <button onclick="addToCart('Potatoes', 30)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/cauliflower.jpg" alt="Cauliflower">
+                <h3>Cauliflower</h3>
+                <span class="price">₹50/kg</span>
+                <button onclick="addToCart('Cauliflower', 50)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/onion.jpg" alt="Onions">
+                <h3>Onions</h3>
+                <span class="price">₹40/kg</span>
+                <button onclick="addToCart('Onions', 40)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/carrot.jpg" alt="Carrots">
+                <h3>Carrots</h3>
+                <span class="price">₹60/kg</span>
+                <button onclick="addToCart('Carrots', 60)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/spinach.jpg" alt="Spinach">
+                <h3>Spinach</h3>
+                <span class="price">₹20/bundle</span>
+                <button onclick="addToCart('Spinach', 20)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/apple.jpg" alt="Apples">
+                <h3>Apples</h3>
+                <span class="price">₹150/kg</span>
+                <button onclick="addToCart('Apples', 150)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/banana.jpg" alt="Bananas">
+                <h3>Bananas</h3>
+                <span class="price">₹50/dozen</span>
+                <button onclick="addToCart('Bananas', 50)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/grape.jpg" alt="Grapes">
+                <h3>Grapes</h3>
+                <span class="price">₹120/kg</span>
+                <button onclick="addToCart('Grapes', 120)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/orange.jpg" alt="Oranges">
+                <h3>Oranges</h3>
+                <span class="price">₹80/kg</span>
+                <button onclick="addToCart('Oranges', 80)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/guava.jpg" alt="Guava">
+                <h3>Guava</h3>
+                <span class="price">₹50/kg</span>
+                <button onclick="addToCart('Guava', 50)">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="images/pineapple.jpg" alt="Pineapples">
+                <h3>Pineapples</h3>
+                <span class="price">₹90/each</span>
+                <button onclick="addToCart('Pineapples', 90)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+   
+    <script>
+        const cart = [];
+
+        function addToCart(item, price) {
+            const product = { item, price };
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${item} added to cart!`);
+        }
+
+        function redirectToCart(event) {
+            event.preventDefault();
+            window.location.href = 'cart.html';
+        }
+
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

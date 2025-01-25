@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        /* Overall page background */
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa; /* Soft light blue background */
+    min-height: 100vh; /* Use minimum height to allow scrolling if content exceeds the viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Ensures proper stacking of content */
+}
+
+.registration-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    text-align: center;
+    border: 2px solid green; /* Light border */
+    margin: 20px; /* Add margin to avoid cropping if too much content */
+}
+
+
+        /* Heading */
+        h1 {
+            color: green;
+            /* Cool teal color */
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        /* Label styling */
+        label {
+            font-size: 16px;
+            color: #333;
+            text-align: left;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Input fields styling */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0 20px 0;
+            border: 2px solid green;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background-color: #f1f8e9;
+            /* Light greenish background */
+        }
+
+        /* Border color change on focus */
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        textarea:focus {
+            border-color: #004d40;
+            /* Dark teal color on focus */
+            outline: none;
+        }
+
+        /* Submit button styling */
+        button[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            background-color: green;
+            /* Teal button */
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #004d40;
+            /* Darker teal on hover */
+        }
+
+        /* Styling for the textarea field */
+        textarea {
+            height: 120px;
+        }
+
+        /* Footer or extra links (if needed in future) */
+        .footer {
+            font-size: 14px;
+            color: #004d40;
+            margin-top: 15px;
+        }
+
+        .footer a {
+            color: green;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="registration-container">
+        <h1>Registration Form</h1>
+        <form action="register.php" method="POST" href="login.html">
+            <label for="aadhar_num">Aadhar Number:</label>
+            <input type="text" id="aadhar_num" name="aadhar_num" required><br>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required><br>
+
+            <label for="adress">Address:</label>
+            <textarea id="adress" name="adress" required></textarea><br>
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <button type="submit" >Register</button>
+        </form>
+    </div>
+</body>
+
+</html>

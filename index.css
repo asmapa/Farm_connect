@@ -1,0 +1,333 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f9f9f9;
+    /* Light beige for a warm background */
+    color: #333;
+    /* Dark gray for readability */
+    min-height: 100vh;
+}
+
+.asma_name {
+    color: #4CAF50;
+    /* Fresh green for the title */
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.asma_name::first-letter {
+    color: #333;
+    /* Dark gray for contrast */
+    font-size: 40px;
+}
+
+#header {
+    width: 100%;
+    height: 100vh;
+    background-image: url();
+    /* Replace with a farming-related image */
+    background-size: cover;
+    background-position: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    padding: 20px 10%;
+   
+}
+.portion{
+    background-image: url("images/homeImage.jpg");
+        background-size: cover;
+        /* Ensures the image covers the entire container */
+        background-position: center;
+        /* Optional: Ensures the image is centered */
+        background-repeat: no-repeat;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: #333;
+    /* Dark gray links */
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #4CAF50;
+    /* Green underline on hover */
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.header-text {
+    margin-top: 20%;
+    font-size: 30px;
+    color: #fff;
+}
+
+.header-text p {
+    font-size: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    color: #4CAF50;
+}
+
+.header-text h1 {
+    font-size: 60px;
+    margin-top: 20px;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    color: #f7f3e9;
+    /* Light beige */
+}
+
+.header-text h1 span {
+    color: #FFD700;
+    /* Gold for emphasis */
+}
+
+/* About Section */
+#about {
+    padding: 80px 0;
+    color: #555;
+    /* Medium gray for text */
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+}
+
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+.sub-title {
+    font-size: 45px;
+    font-weight: 600;
+    color: #4CAF50;
+}
+
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    color: #4CAF50;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #FFD700;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 100%;
+}
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span {
+    color: #4CAF50;
+    font-size: 20px;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+.hi {
+    color: #666;
+    /* Soft gray */
+    font-weight: 200;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.tab-titles p {
+    color: #666;
+    font-size: 24px;
+}
+
+/* Portfolio Section */
+#Portfolio {
+    padding: 50px 0;
+}
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img {
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #4CAF50);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+.layer h3 {
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+}
+
+.work:hover img {
+    transform: scale(1.1);
+}
+
+.work:hover .layer {
+    height: 100%;
+}
+
+/* Contact Section */
+#contact {
+    margin-top: 150px;
+}
+
+.contact-left {
+    flex-basis: 35%;
+}
+
+.contact-right {
+    flex-basis: 60%;
+}
+
+.contact-left p {
+    margin-top: 30px;
+}
+
+.contact-left p i {
+    color: #4CAF50;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.btn {
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #4CAF50;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #4CAF50;
+    background: #f7f3e9;
+}
+
+.btn.btn2 {
+    background: #4CAF50;
+    color: #fff;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #eaeaea;
+    /* Light gray */
+    padding: 15px;
+    margin: 15px 0;
+    color: #333;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+.copyright {
+    width: 100%;
+    margin-top: 10px;
+    height: 100%;
+    text-align: center;
+    padding: 25px 0;
+    font-weight: 300;
+    color: #777;
+    background: green;
+}

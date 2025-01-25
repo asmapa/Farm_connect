@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Registration</title>
+    <style>
+        /* Overall page styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0fdf4;
+            /* Light green background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .registration-container {
+            background-color: #ffffff;
+            padding: 30px 25px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            border: 2px solid #2c7a7b;
+            /* Farm Connect green */
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #2c7a7b;
+            font-size: 28px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 14px;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #2c7a7b;
+            border-radius: 6px;
+            background-color: #f9fdfb;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #285e61;
+            outline: none;
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #2c7a7b;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #285e61;
+        }
+
+        .footer {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #285e61;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #2c7a7b;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive design */
+        @media (max-width: 480px) {
+            .registration-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            input,
+            textarea,
+            select {
+                padding: 10px;
+                font-size: 13px;
+            }
+
+            button {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="registration-container">
+        <h1>Farmer Registration</h1>
+        <form action="FarmerReg.php" method="POST">
+            <label for="aadhar_num">Aadhar Number:</label>
+            <input type="text" id="aadhar_num" name="aadhar_num" placeholder="Enter your Aadhar Number" required>
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your Full Name" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Create a Password" required>
+
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your Password"
+                required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" placeholder="Enter your Address" required></textarea>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your Phone Number" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+
+            <label for="farm_type">Type of Farm:</label>
+            <select id="farm_type" name="farm_type" required>
+                <option value="">--Select Farm Type--</option>
+                <option value="crop">Crop Farming</option>
+                <option value="dairy">Dairy Farming</option>
+                <option value="poultry">Poultry Farming</option>
+                <option value="mixed">Mixed Farming</option>
+            </select>
+
+            <button type="submit">Register</button>
+        </form>
+        <div class="footer">
+            Already have an account? <a href="login.html">Login here</a>.
+        </div>
+    </div>
+</body>
+
+</html>

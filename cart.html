@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f9f9f9, #e8f5e9);
+        }
+
+        header {
+            background: linear-gradient(to right, #4CAF50, #66BB6A);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        table th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .total {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin: 30px 0;
+            text-align: right;
+            color: #333;
+            padding-right: 30px;
+        }
+
+        button {
+            background: linear-gradient(to right, #4CAF50, #66BB6A);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background 0.3s ease, transform 0.2s;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: #45a049;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 1em;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .cart-empty {
+            font-size: 1.2em;
+            color: red;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+         Your Cart
+    </header>
+
+    <div class="container">
+        <table id="cartTable">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price (₹)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Items will be dynamically added here -->
+            </tbody>
+        </table>
+
+        <div class="total" id="totalAmount">
+            Total: ₹0
+        </div>
+
+        <button onclick="confirmOrder()">Confirm Order</button>
+        <div class="cart-empty" id="cartEmptyMessage"></div>
+    </div>
+
+    <footer>
+        © 2025 AgriFarmer Management | <a href="#">Privacy Policy</a>
+    </footer>
+
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        function loadCart() {
+            const tableBody = document.querySelector('#cartTable tbody');
+            let total = 0;
+
+            if (cart.length === 0) {
+                document.getElementById('cartEmptyMessage').textContent = 'Your cart is empty!';
+                document.getElementById('totalAmount').style.display = 'none';
+                return;
+            }
+
+            cart.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = 
+                    `<td>${item.item}</td>
+                    <td>₹${item.price}</td>`;
+                tableBody.appendChild(row);
+                total += item.price;
+            });
+
+            document.getElementById('totalAmount').textContent = `Total: ₹${total}`;
+        }
+
+        function confirmOrder() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+
+            alert('Order confirmed! Thank you for shopping with us.');
+            localStorage.removeItem('cart');
+            window.location.reload();
+        }
+
+        window.onload = loadCart;
+    </script>
+</body>
+</html>
