@@ -108,8 +108,9 @@ Add Products by Farmer
 *Add caption explaining what this shows*
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+![workflow](https://github.com/user-attachments/assets/8283c7db-a26d-4058-a27b-17e1f31b5dc5)
+
+Workflow diagrams for Farm Connect: From Login to Order Tracking – Simplifying the journey to access fresh farm products.
 
 For Hardware:
 
