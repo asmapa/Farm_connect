@@ -35,7 +35,7 @@ For Software:
 - [html,css,JavaScript,php]
 - [Frameworks used]
 - [Libraries used]
-- [Tools used]
+- [VS Code]
 
 For Hardware:
 - [List main components]
