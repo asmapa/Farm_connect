@@ -54,8 +54,52 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+Home Page
+
+![HomePage](https://github.com/user-attachments/assets/0dd855b5-d80d-4233-86f9-29c6ba548601)
+
+Customer Login Page
+![CustomerLogin](https://github.com/user-attachments/assets/69c4ed7c-32ba-41a4-a802-6d1034ae691e)
+
+Cstomer Registration Page
+
+![customerReg](https://github.com/user-attachments/assets/8034f27d-8d4f-4a9f-a2fa-a3e3e5cde386)
+
+Customer Dashboard
+
+![customerdashboard](https://github.com/user-attachments/assets/cfbba7f8-4337-4659-9ef7-9c7e9040eaa7)
+
+view Cart
+![viewCart](https://github.com/user-attachments/assets/f2c2a0f5-9ef9-41b0-8e53-50f348bd9171)
+
+track Order
+![trackOrder](https://github.com/user-attachments/assets/6d4f3eeb-0f93-4cba-aafd-0792b957503a)
+
+Farmer Registration
+
+![farmerreg](https://github.com/user-attachments/assets/fdb6517b-df7e-42ea-82f8-d5f1bd518ce0)
+
+Farmer Login
+
+![FarmerLogin](https://github.com/user-attachments/assets/9361131d-f82e-4160-a7ad-8da68f532f13)
+
+Farmer Dashboard
+
+![farmerdashboard](https://github.com/user-attachments/assets/82aa32de-e742-48e7-af26-1f24c250813e)
+
+Farmer Dashboard-2
+
+![farmerdashboard2](https://github.com/user-attachments/assets/514dc79d-8328-4592-8a6a-483335f87b53)
+
+Add Products by Farmer
+
+![addproduct](https://github.com/user-attachments/assets/0b699095-5901-467b-a512-0febc955b079)
+
+
+
+
+
+
 
 ![Screenshot2](Add screenshot 2 here with proper name)
 *Add caption explaining what this shows*
