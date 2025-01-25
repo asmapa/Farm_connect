@@ -6,9 +6,9 @@
 
 
 ### Team Members
-- Member 1: [Anjana K Santhosh] - [RIT]
-- Member 2: [Asma P A] - [RIT]
-- Member 3: [Mila Joseph] - [RIT]
+- Member 1: Anjana K Santhosh - RIT
+- Member 2: Asma P A - RIT
+- Member 3: Mila Joseph - RIT
 
 ### Hosted Project Link
 https://asmapa.github.io/Farm_connect/
@@ -141,9 +141,9 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- Asma PA: Frontend and Backend
+- Anjana K Santhosh: Frontend and Backend
+- Mila Joseph: Frontend
 
 ---
 Made with ❤️ at TinkerHub
