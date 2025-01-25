@@ -1,8 +1,8 @@
-# [Project Name] 🎯
+# FARM CONNECT 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: Tech titans
 
 
 ### Team Members
