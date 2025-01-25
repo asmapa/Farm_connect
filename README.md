@@ -56,6 +56,11 @@ Home Page
 
 ![HomePage](https://github.com/user-attachments/assets/0dd855b5-d80d-4233-86f9-29c6ba548601)
 
+Contact Section
+![HomeContact](https://github.com/user-attachments/assets/de0354f0-8ce2-4753-82a9-1a2c63425fb0)
+
+
+
 Customer Login Page
 ![CustomerLogin](https://github.com/user-attachments/assets/69c4ed7c-32ba-41a4-a802-6d1034ae691e)
 
